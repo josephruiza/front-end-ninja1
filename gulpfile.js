@@ -5,7 +5,7 @@ var sass = require('gulp-sass');
 
 //definimos la tarea por defecto
 gulp.task("default", function(){
-	console.log("hello world!!!");
+	gulp.watch('./style.scss', ['compile-sass']);	//con watch dejamos alguien vigilando para actualizar los cambios
 });
 
 //definimos la tarea por defecto
