@@ -10,7 +10,7 @@ gulp.task("default", function(){
 
 //definimos la tarea por defecto
 gulp.task("compile-sass", function(){
-	gulp.src('./style.scss')			//cargo el fichero style.scss
-	.pipe(sass())						//compilo con sass
-	.pipe(gulp.dest('./'));				//genero el fichero style.css en ./
+	gulp.src('./style.scss')						//cargo el fichero style.scss
+	.pipe(sass().on('error', sass.logError))		//compilo con sass
+	.pipe(gulp.dest('./'));							//genero el fichero style.css en ./
 });
