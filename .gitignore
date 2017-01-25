@@ -1,0 +1,5 @@
+#ignoramos las carpetas
+node_modules/
+
+#indicamos los ficheros para no subir
+style.css
