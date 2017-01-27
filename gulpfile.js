@@ -12,7 +12,9 @@ gulp.task("default", ["compile-sass"], function(){	//ejecutará previamente las 
 //definimos la tarea por defecto
 gulp.task("compile-sass", function(){
 	gulp.src('./src/scss/style.scss')				//cargo el fichero style.scss
-	.pipe(sass().on('error', sass.logError))		//compilo con sass
+	.pipe(sass().on('error', function(error){
+		return notify().write(error);
+	}))		//compilo con sass
 	.pipe(gulp.dest('./dist/'))						//genero el fichero style.css en ./
 	.pipe(notify("SASS Compilado"));				//nos muestra notificaciones de escritorio
 });
